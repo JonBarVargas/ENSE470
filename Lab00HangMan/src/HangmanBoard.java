@@ -1,39 +1,51 @@
 public class HangmanBoard {
-	protected String secretWord = "";
-	protected String boardWord ="";
-	protected int numOfTries;
-	protected String triedChars = "";
+	private String secretWord = "";
+	private String boardWord ="";
+	private int numOfTries;
+	private String triedChars = "";
 
 
 	public HangmanBoard() {
 		numOfTries = 0;
-		
+		secretWord = "";
+		triedChars ="";
+		boardWord ="";
 	}
+	
 	//done
 	public HangmanBoard(int maxGuesses, String userWord) {
 		numOfTries = maxGuesses;
-		secretWord = userWord;
+		secretWord = userWord.toLowerCase();
 		for (int i = 0; i < secretWord.length(); i++)
 			boardWord += "*";
 	}
+	
 	//done
 	public String getSecretWord()
 	{
 	return secretWord;
 	}
 	
-	public void displayBoard() {
-		System.out.print("The word to guess is: ");
-		System.out.println(boardWord);
-		System.out.println("You have " + numOfTries + " guesses left");
-	}
+//	public String getDisplayBoardWord() {
+	//return boardWord;
+	//}
 	
 	public void enterLetter(char guess) {
+		char ch1 = Character.toLowerCase(guess);
+		this.validateGuess(ch1);
+	}
+	private void validateGuess(char guess)
+	{
 		boolean correctGuess = false;
 		String guessString = String.valueOf(guess); 
 		correctGuess = secretWord.contains(guessString);
-		
 		System.out.println(secretWord.contains(guessString));
+	}
+	public void validateGuess(String guess)
+	{
+		
+		//guess.toLowerCase();
+		System.out.println(secretWord.equalsIgnoreCase(secretWord));
 	}
 	private void updateBoard(boolean guessState, char userChar)
 	{
