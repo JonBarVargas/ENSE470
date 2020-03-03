@@ -42,9 +42,9 @@ public class Lab01jbv071 {
 	public static void testTheTank(Tank userTank, int modifier) {
 		//The modifiers are meant to increase the difficulty of the 
 		//test based on what round it is
-		final int TESTSHOT = 70*modifier;
-		final int TESTPENETRATION = 55*modifier;
-		final int SHOOTROUNDS = 3+modifier;
+		final int TESTSHOT = 70 * modifier;
+		final int TESTPENETRATION = 55 * modifier;
+		final int SHOOTROUNDS = 3 + modifier;
 		
 		System.out.println("Tank name: " + userTank.getName());
 		System.out.println("Country: " + userTank.getCountry());

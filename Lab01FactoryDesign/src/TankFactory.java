@@ -3,7 +3,7 @@ public class TankFactory {
 	
 	public Tank makeNewTank(String tankTypes) {
 		Tank testTank = null;
-		tankTypes.toLowerCase();
+		tankTypes = tankTypes.toLowerCase();
 		if (tankTypes.equals("cunningham")) {
 			testTank = new T1Cunningham();
 		}else
